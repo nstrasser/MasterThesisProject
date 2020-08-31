@@ -1,0 +1,6 @@
+option(enable_World_Migration "Enable Module MigrationWorld" OFF)
+if (enable_World_Migration)
+  register_module(World Migration)
+  target_sources(${EXE} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/MigrationWorld.cpp)
+  target_sources(${EXE} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/MigrationWorld.h)
+endif()

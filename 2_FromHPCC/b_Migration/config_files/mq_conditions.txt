@@ -1,0 +1,38 @@
+
+# Lines starting with # are ignored
+
+REPS = 40641 40660
+
+VAR = MR        WORLD_MIGRATION-migrationRate
+
+#CONDITIONS = MR=0.0
+#CONDITIONS = MR=0.1
+#CONDITIONS = MR=0.2
+#CONDITIONS = MR=0.3
+#CONDITIONS = MR=0.4
+#CONDITIONS = MR=0.5
+#CONDITIONS = MR=0.6
+#CONDITIONS = MR=0.7
+#CONDITIONS = MR=0.8
+#CONDITIONS = MR=0.9
+CONDITIONS = MR=1.0
+
+SETTINGS = settings.cfg,settings_organism.cfg,settings_world.cfg
+
+-----
+
+# JOBNAME will be appended before condition (C*) identifier - if "NONE" then job will have not JOBNAME
+JOBNAME = MIGRATION_FACET_
+
+EXECUTABLE = ./mabe
+
+-----
+# comma separate the mail type list ex: FAIL,END,REQUEUE
+
+# HPCC (not used for indefinite mode)
+HPCC_PARAMETERS = #SBATCH -C intel18|intel16|intel14
+HPCC_PARAMETERS = #SBATCH --ntasks=1
+HPCC_PARAMETERS = #SBATCH --cpus-per-task=1
+HPCC_PARAMETERS = #SBATCH --time=02:00:00
+HPCC_PARAMETERS = #SBATCH --mem=2G
+HPCC_PARAMETERS = #SBATCH --mail-type=FAIL

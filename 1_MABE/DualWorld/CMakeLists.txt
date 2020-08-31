@@ -1,0 +1,6 @@
+option(enable_World_Dual "Enable Module DualWorld" OFF)
+if (enable_World_Dual)
+  register_module(World Dual)
+  target_sources(${EXE} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/DualWorld.cpp)
+  target_sources(${EXE} PRIVATE ${CMAKE_CURRENT_LIST_DIR}/DualWorld.h)
+endif()

@@ -1,0 +1,37 @@
+
+# Lines starting with # are ignored
+
+REPS = 35951 36000
+
+VAR = SC        WORLD_DUAL-scenario
+VAR = MA	WORLD_DUAL-aMutationRate
+VAR = MB	WORLD_DUAL-bMutationRate
+
+#CONDITIONS = SC=lockstep MA=0.1 MB=0.01
+#CONDITIONS = SC=oneOffLockstep MA=0.1 MB=0.01
+#CONDITIONS = SC=bFollowsA MA=0.1 MB=0.01
+#CONDITIONS = SC=independentAddition MA=0.1 MB=0.01
+#CONDITIONS = SC=matchingBitsLockstep MA=0.1 MB=0.01
+
+CONDITIONS = SC=noSelPressureBoth MA=0.1 MB=0.01
+
+SETTINGS = settings.cfg,settings_organism.cfg,settings_world.cfg
+
+-----
+
+# JOBNAME will be appended before condition (C*) identifier - if "NONE" then job will have not JOBNAME
+#JOBNAME = DIFF_MUT_4__IP_1000_
+JOBNAME = DIFF_MUT_4_DRIFT__IP_1000_
+
+EXECUTABLE = ./mabe
+
+-----
+# comma separate the mail type list ex: FAIL,END,REQUEUE
+
+# HPCC (not used for indefinite mode)
+HPCC_PARAMETERS = #SBATCH -C intel18|intel16|intel14
+HPCC_PARAMETERS = #SBATCH --ntasks=1
+HPCC_PARAMETERS = #SBATCH --cpus-per-task=1
+HPCC_PARAMETERS = #SBATCH --time=02:00:00
+HPCC_PARAMETERS = #SBATCH --mem=2G
+HPCC_PARAMETERS = #SBATCH --mail-type=FAIL

@@ -1,5 +1,5 @@
 ## Overview
-[![DOI](https://zenodo.org/badge/x.svg)](https://zenodo.org/badge/latestdoi/x)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4009396.svg)](https://doi.org/10.5281/zenodo.4009396)
 
 This repository is a companion to the author's master thesis. It includes the source code (C++), the analysis scripts (Python/R) and the graphs developed for and used in the thesis. 
 
